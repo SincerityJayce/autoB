@@ -1,6 +1,5 @@
 
 import './App.css'
-import {sweet} from "./zucker"
 
 
 // tells the app to render

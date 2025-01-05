@@ -11,7 +11,7 @@ export default defineConfig({
     {
      "react-use-measure": [["default","useMeasure"]], 
      "@react-spring/web":["animated","useSpring"],
-     // "zucker":["sweet"], 
+     "zucker":["sweet"],
     }
   ]}),
    tailwindcss(),
