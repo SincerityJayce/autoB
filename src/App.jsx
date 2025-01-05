@@ -18,9 +18,16 @@ export default App
 //defines the different entities
 const entities = {
  Warrior (en){
-  const position = en.position
-  return      <div className="w-8 h-8 flex absolute bg-purple-800" style={{...position}}>{ en.id }</div>
+
+  const [position] = useSpring(() => ({
+     from: en.position,
+     to: game.location("enemy goal").position,
+     config:{mass:800}
+   }),   []  )
+
+  return      <animated.div className="w-8 h-8 flex absolute bg-purple-800" style={{...position}}>{ en.id }</animated.div>
  },
+
  Archer (en){
   const position = en.position
   return      <div className="w-8 h-8 flex absolute bg-blue-800" style={{...position}}>{ en.id }</div>
@@ -69,7 +76,5 @@ const game = sweet({
 })
 .selectors({
  entity:id=>s=>s.entities.find(e=>e.id==id),
- location:id=>s=>s.entities.find(e=>e.id==id),
+ location:id=>s=>s.locations.find(e=>e.id==id),
 })
-
-

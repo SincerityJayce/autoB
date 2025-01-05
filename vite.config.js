@@ -10,7 +10,7 @@ export default defineConfig({
     'react',
     {
      "react-use-measure": [["default","useMeasure"]], 
-     "reat-spring":["Animated","useSpring"],
+     "@react-spring/web":["animated","useSpring"],
      "zucker":["sweet"],
     }
   ]}),
